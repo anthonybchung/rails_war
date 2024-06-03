@@ -1,28 +1,29 @@
-<h2>Sign up</h2>
+<h1 class="text-text text-3xl">Sign up</h1>
 
-<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+<%= form_for(resource, as: resource_name, url: registration_path(resource_name), :html => {class: "mt-4"}) do |f| %>
   <%= render "devise/shared/error_messages", resource: resource %>
 
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+  <div class="field w-full relative my-4">
+    <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "bg-tertiary w-full rounded border-text focus:border-secondary  focus:border-2 focus:ring-0", placeholder: "Enter Email" %>
+    <%= f.label :email, class: "absolute left-3 -top-3 bg-tertiary px-2 text-text" %>
   </div>
 
-  <div class="field">
-    <%= f.label :password %>
+  <div class="field w-full relative my-4">
+    <%= f.password_field :password, autocomplete: "new-password", class: "bg-tertiary w-full rounded border-text focus:border-secondary  focus:border-2 focus:ring-0", placeholder: "Enter Password" %>
+    <%= f.label :password, class: "absolute left-3 -top-3 bg-tertiary px-2 text-text" %>
     <% if @minimum_password_length %>
     <em>(<%= @minimum_password_length %> characters minimum)</em>
-    <% end %><br />
-    <%= f.password_field :password, autocomplete: "new-password" %>
+    <% end %>
   </div>
 
-  <div class="field">
-    <%= f.label :password_confirmation %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
+  <div class="field w-full relative my-4">
+    <%= f.password_field :password_confirmation, autocomplete: "new-password", class: "bg-tertiary w-full rounded border-text focus:border-secondary  focus:border-2 focus:ring-0" %>
+     <%= f.label :password_confirmation, class: "absolute left-3 -top-3 bg-tertiary px-2 text-text" %>
   </div>
 
-  <div class="actions">
-    <%= f.submit "Sign up" %>
+  <div class="actions w-full flex flex-row justify-end items-center mt-4">
+    <%= f.submit "Sign up", class:"bg-primary px-4 py-1 rounded text-text mx-2 cursor-pointer" %>
+    <%= link_to "Cancel", root_path, class:"bg-primary px-4 py-1 rounded text-text"%>
   </div>
 <% end %>
 

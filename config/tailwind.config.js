@@ -13,7 +13,8 @@ module.exports = {
       'secondary': '#B2B1F0',
       'tertiary': '#EEEEFF',
       'text': '#01002C',
-      'white': '#ffffff'
+      'white': '#ffffff',
+      'warning': '#ff0f0f'
     }
   },
   plugins: [
